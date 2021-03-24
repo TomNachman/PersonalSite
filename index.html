@@ -394,7 +394,7 @@
                         <div class="fcf-form-group">
                             <label for="Message" class="fcf-label">Your message</label>
                             <div class="fcf-input-group">
-                                <textarea id="Message"  style="width:100%;" name="Message" disabled="disabled" class="fcf-form-control" rows="6" maxlength="3000" placeholder="what would you like to tell me?" required></textarea>
+                                <textarea id="Message"  style="width:100%;" name="Message" class="fcf-form-control" rows="6" maxlength="3000" placeholder="what would you like to tell me?" required></textarea>
                                 <small></small>
                                 <script>
                                     tinymce.init({
@@ -495,7 +495,7 @@
 
                                 // submit to the server if the form is valid
                                 if (isFormValid) {
-                                    mailto_link = "mailto:nachmant@post.bgu.ac.il?subject=" + "To Linus" + " &body=" + messageEl.value.trim();
+                                    mailto_link = "mailto:nachmant@post.bgu.ac.il?subject=" + "To Linus" + " &body=" + tinymce.get("Message").getContent({ format: "text" });
                                     let link = document.createElement('a');
                                     link.href = mailto_link;
                                     link.click();
